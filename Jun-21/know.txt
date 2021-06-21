@@ -1,0 +1,191 @@
+https://aspireinfolabs.moodlehub.com/login/?lang=en
+There are two ways to connect to Oracle Database using cx_Oracle:
+
+-> Standalone connections
+
+These are useful when the application maintains a single user session to a database. Connections are created by cx_Oracle.connect() or its alias cx_Oracle.Connection().
+
+-> Pooled connections
+
+Connection pooling is important for performance when applications frequently connect and disconnect from the database. Pools support Oracle’s high availability features and are recommended for applications that must be reliable
+Pools are created with cx_Oracle.SessionPool()
+
+cx_oracle:
+	cx_Oracle is a module that enables access to Oracle Database and conforms to the Python database API specification
+
+cursor:
+	The MySQLCursor of mysql-connector-python (and similar libraries) is used to execute statements to communicate with the MySQL database.
+
+Queries (statements beginning with SELECT or WITH) can only be executed using the method Cursor.execute()
+
+commit: 
+	The commit () method is used to make sure the changes made to the database are consistent
+
+scrollable is used to get particular row or data
+
+queries: select like_table.tweet_id, count(*) as no_of_likes from like_table inner join tweet_table on like_table.tweet_id = tweet_table.tweet_id
+group by like_table.tweet_id
+
+select name from user_table inner join follower_table on user_table.user_id = follower_table.follower_user_id
+where following_user_id = 1
+order by name desc
+
+select user_id, count(*) as no_of_followers from user_table inner join follower_table on user_table.user_id = follower_table.follower_user_id
+group by follower_user_id
+having follower_user_id = 1
+
+
+select reply_table.user_id, tweet_table.tweet, reply_table.reply as reply_to_msg, reply_table.date_time from tweet_table inner join reply_table on tweet_table.tweet_id = reply_table.tweet_id inner join user_table on user_table.user_id = reply_table.user_id
+where tweet_table.user_id = 1
+
+(3, 2, 1, TO_DATE('2021/06/07 14:02:44', 'yyyy/mm/dd hh24:mi:ss'))
+
+explore dom
+cascading
+what are doctypes character supp
+freee fake api oncline
+update inner html
+jsfiddle
+
+Document object model(DOM) : When a web page is loaded, the browser creates a Document Object Model of the page.
+it has tree like strucucture.
+The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+The innerHTML property can be used to get or change any HTML element
+
+Document object: is nothing but a web page
+we can access and manupilate any element in the html page
+
+document.getElementById(id)
+document.getElementsByTagName(name)
+document.getElementsByClassName(name)
+
+The Doctype is not an element or tag, it lets the browser know about the version of or standard of HTML
+document type definition (DTD) 
+InnerHTML property is used for modifying the HTML content from JavaScript code. InnerHTML property is also used for writing dynamic html content on html documents
+
+
+datatypes in js and operater
+
+binary sort 
+binary serch tree
+
+http protocol: HTTP is a protocol which allows the fetching of resources
+import: Used to read code exported from another module
+export: Used to provide code to other modules
+modules
+
+modules: independent units reuseable codes
+
+require: require function is the easiest way to include modules that exist in separate files
+
+yield: Pause and resume a generator function.
+
+async function: The async function defines an async function expression.
+await: Pause and resume an async function and wait for the promise's resolution/rejection.
+
+XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. XMLHttpRequest is used heavily in AJAX programming.
+This interface also inherits properties of XMLHttpRequestEventTarget and of EventTarget.
+
+Firefox Developer Tools is a set of web developer tools built into Firefox. You can use them to examine, edit, and debug HTML, CSS, and JavaScript.
+
+HTTP protocol: 
+	Application Layer, transmitting documents like HTML
+	used to communicate web browser and web server
+	client and server model
+	stateless protocol(meaning that the server does not keep any data (state) between two requests It does not require the server to retain session information)
+	tcp/ip realible
+
+HTTP cache : cache is used for fast web site. it reduces the latancy and network traffic and becomes more responsive
+
+cookies: small pieces of data
+	server sends to the web browser
+	browser  stores and send back for later reqeuest
+	typically when wo request came from same browsers
+IP address: An IP address is a number assigned to every device connected to a network that uses the Internet protocol. 
+
+PORT: port is communication end point
+	 HTTP protocol is 80
+	 HTTPS protocol is 443
+	server waits for request on this ports
+	port: SMTP (25), POP3 (110), IMAP (143), IRC (194)(default ports)
+
+HTTPs : it is encrypted version of http. it uses ssl(secure socket layes is security network which encript data) and tcl(transport layer security) to encrypt all communication between client and server
+	This secure connection allows clients to safely exchange sensitive data with a server
+
+ES6
+Arrows: These are a function which is described by the ‘=>’ syntax
+Objects: Object literals are used to support prototype assignments.
+Classes: ES6 classes can be easily implemented over the prototype-based object-oriented pattern
+Destructing: It allows binding pattern, which is based primarily on pattern matching.
+String interpolation(placeholders)
+Default(no other values are provided)
+Spread(copy of objects or update values)
+Module Loaders
+Weak set
+Map
+New Library
+Promises
+Proxies
+
+Promises:
+	The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+	PENDING, FULFILLED, REJECTED
+	 Promise.prototype.then() and Promise.prototype.catch() methods return promise.
+.then() : method takes two arguments
+	1) the first argument is a callback function for the resolved case of the promise
+	2) the second argument is a callback function for the rejected case
+
+local storage: 
+	The localStorage object provides access to a local storage for a particular Web Site. It allows you to store, read, add, modify, and delete data items for that domain.
+methods like setItem, getItem, removeItem etc.
+
+what is internet?
+the internet is a global collection of networks of computers connected to each other. These networks allow data to be transferred between the computers/devices connected to them. "This exchange of data is possible only because all the computers on the network play by the same set of rules, called the Internet Protocol (IP)"
+
+we do not access internet directly we request to the server of teh website via of ISPs. And results are come from ISPs.
+
+when we want to send the data to the another device(sender->isp->(the data is split into many packets that travel multiple network paths and the packets are arranged in the original order)Routers->isp->recipient)
+
+isp: internet service providers: serveice for accessing, using or participating inthe internet
+application layer, transport layer, network layer, physical layer
+what is tcp/ip: Transition control protocol/internet protocol this are in network layer
+Mainly used for communication protocols
+tcp and ip protocol that makes internet possible
+
+tcp defines how applications create communication channels, also managed how a message is broken down to be transmmited and reassemble
+
+ip defines how to address and route packets for delivery.(ensures the path) 
+
+ipv4: it is used to identify the devices, 32bit, numeric ip address
+features:
+	Connectionless Protocol(a message is sent from one end point to another without a prior arrangement.)
+	Allow creating a simple virtual communication layer over diversified devices
+	It requires less memory, and ease of remembering addresses
+	Already supported protocol by millions of devices
+	Offers video libraries and conferences
+ipv6: latest version, 128bit, also called ipng(internet protocol next generation), alpha numeric
+features:
+	Hierarchical addressing and routing infrastructure
+	Stateful and Stateless configuration
+	Support for quality of service (QoS)
+	An ideal protocol for neighboring node interaction
+
+DNS: Domain name servers
+DNS eliminates to memorize the ip address
+users connect websites through domain names instead of ip addresss
+DNS translate domain name to ip address to understand broswer
+
+PORT: 16 bit unsigned integer
+tcp port number is 0 is resereved
+
+middleware function: Middleware appears in the middle between an initial request and final intended route.
+this middle ware functions are invoked in an order.
+define: Middleware functions are the functions that access to the request and response object (req, res) in request-response cycle.
+
+It can execute any code.
+It can make changes to the request and the response objects.
+It can end the request-response cycle.
+It can call the next middleware function in the stack.
+
+middleware interface
+regular expression
